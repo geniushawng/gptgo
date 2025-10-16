@@ -40,3 +40,8 @@ async def run(req: Request, body: RunReq):
         }
     except subprocess.TimeoutExpired:
         raise HTTPException(408, "timeout")
+
+@app.get("/")
+def ping():
+    return {"ok": True}
+
